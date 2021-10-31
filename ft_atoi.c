@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayajirob <ayajirob@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 15:11:23 by lcorinna          #+#    #+#             */
-/*   Updated: 2021/10/25 22:43:26 by lcorinna         ###   ########.fr       */
+/*   Updated: 2021/10/28 20:59:49 by ayajirob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdlib.h>
-// #include <stdio.h>
+#include <stdlib.h>
+#include <stdio.h>
 #include "libft.h"
 
-static int	number(char *done)
+static long long	number(char *done)
 {
-	int	res;
-	int	i;
+	long long	res;
+	int			i;
 
 	i = 0;
 	res = 0;
@@ -31,7 +31,7 @@ static int	number(char *done)
 
 int	ft_atoi(const char *str)
 {
-	int	res;
+	long long	res;
 	int	i;
 
 	res = 0;
@@ -51,10 +51,10 @@ int	ft_atoi(const char *str)
 	return (res);
 }
 
-// int	main(void)
-// {
-// 	char s1[] = "   123";
-// 	printf("%d\n\n", atoi(s1));
-// 	printf("%d\n", ft_atoi(s1));
-// 	return (0);
-// }
+int	main(void)
+{
+	char	n[40] = "2147483650";
+	printf("%d\n\n", atoi(n));
+	printf("%d\n", ft_atoi(n));
+	return (0);
+}
