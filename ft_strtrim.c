@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 11:20:59 by lcorinna          #+#    #+#             */
-/*   Updated: 2021/11/01 22:38:59 by lcorinna         ###   ########.fr       */
+/*   Updated: 2021/11/03 15:39:19 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	res = (char *) set;
 	while (j > 0 && res != NULL)
 		res = ft_strchr(set, s1[--j]);
-	n = j - i + 2;
+	res_len = j - i + 2;
 	res = (char *) malloc(sizeof(char) * res_len);
 	while (i <= j)
 		*res++ = s1[i++];
