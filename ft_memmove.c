@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 16:00:35 by lcorinna          #+#    #+#             */
-/*   Updated: 2021/10/27 13:41:28 by lcorinna         ###   ########.fr       */
+/*   Updated: 2021/11/06 19:40:48 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,32 @@
 // #include <stdio.h>
 #include "libft.h"
 
-// void	*ft_memmove(void *dst, const void *src, size_t len)
-// {
-// 	int		i;
-// 	char	*q;
-// 	char	*w;
+void	*ft_memmove(void *dst, const void *src, size_t len)
+{
+	char	*d;
+	char	*s;
 	
-// 	q = (char *)dst;
-// 	w = (char *)src;
-// 	while (i < len)
-// 	{
-// 		i++;
-// 	}
-// 	return(q);
-// }
+	d = (char *)dst;
+	s = (char *)src;
+	len -= 1;
+	while (len != -1)
+	{
+		d[len] = s[len];
+		len--;
+	}
+	return(d);
+}
 
 // int	main()
 // {
-// 	char s1[] = " ";
-// 	char s2[] = "qwert";
+// 	char s1[99] = "123456789";
+// 	char s2[99] = "123456789";
 
-// 	// ft_memmove(s1, s2, 4);
-// 	// printf("%s\n", s1);
-
-// 	memmove(s1, s2, 4);
-// 	printf("%s\n", s1);
+// 	printf("%s\n", ft_memmove(NULL, s1, 0));
+// 	printf("%s\n\n", s1);
+ 
+	
+// 	printf("%s\n", memmove(NULL, s2, 0));
+// 	printf("%s\n", s2);
 // 	return (0);
 // }
