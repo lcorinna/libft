@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 11:08:27 by lcorinna          #+#    #+#             */
-/*   Updated: 2021/11/06 11:37:24 by lcorinna         ###   ########.fr       */
+/*   Updated: 2021/11/09 15:36:53 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_putstr_fd(char *s, int fd)
 // int	main(void)
 // {
 // 	char str[] = "qwerty";
-	
+
 // 	ft_putstr_fd(str, 1);
 // 	return (0);
 // }

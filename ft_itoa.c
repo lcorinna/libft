@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 23:09:33 by lcorinna          #+#    #+#             */
-/*   Updated: 2021/11/06 15:45:24 by lcorinna         ###   ########.fr       */
+/*   Updated: 2021/11/09 15:43:20 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ static int	ft_intlen(long long i)
 {
 	int	size;
 
+	size = 0;
 	while (i > 0)
 	{
 		i /= 10;
@@ -27,10 +28,10 @@ static int	ft_intlen(long long i)
 
 char	*ft_itoa(int n)
 {
-	char	*count;
-	int		size;
-	int 	b;
-	long long number;
+	char		*count;
+	int			size;
+	int			b;
+	long long	number;
 
 	number = (long long) n;
 	b = 1;
@@ -57,7 +58,6 @@ char	*ft_itoa(int n)
 // int	main(void)
 // {
 // 	int	count;
-	
 // 	count = 2147483647;
 // 	printf("%s\n", ft_itoa(count));
 // 	return (0);

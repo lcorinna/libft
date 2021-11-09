@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 11:46:08 by lcorinna          #+#    #+#             */
-/*   Updated: 2021/11/06 11:58:19 by lcorinna         ###   ########.fr       */
+/*   Updated: 2021/11/09 15:36:28 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@
 void	ft_putnbr_fd(int n, int fd)
 {
 	char	*str;
-	
+
 	str = ft_itoa(n);
 	while (*str != 0)
 	{
@@ -68,7 +68,7 @@ void	ft_putnbr_fd(int n, int fd)
 // int	main(void)
 // {
 // 	int	i = 57;
-	
+
 // 	ft_putnbr_fd(i, 2);
 // 	return (0);
 // }

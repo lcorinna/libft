@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 15:11:23 by lcorinna          #+#    #+#             */
-/*   Updated: 2021/10/31 15:16:57 by lcorinna         ###   ########.fr       */
+/*   Updated: 2021/11/09 15:33:02 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static long long	number(char *done)
 int	ft_atoi(const char *str)
 {
 	long long	res;
-	int	i;
+	int			i;
 
 	res = 0;
 	i = 0;

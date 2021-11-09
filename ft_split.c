@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 11:24:42 by lcorinna          #+#    #+#             */
-/*   Updated: 2021/11/03 21:41:56 by lcorinna         ###   ########.fr       */
+/*   Updated: 2021/11/09 15:48:02 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 static char	**arraymem(char const *s, char c)
 {
-	char 	**formem;
+	char	**formem;
 	int		j;
 	int		i;
 
@@ -27,19 +27,19 @@ static char	**arraymem(char const *s, char c)
 			i++;
 		j++;
 	}
-	formem = (char**) malloc((i +1) * sizeof(char*));
+	formem = (char **) malloc ((i + 1) * sizeof(char *));
 	return (formem);
 }
 
-static char	*rec(char *full, int counter, int i, int	line_number, char **str)
+static char	*rec(char *full, int counter, int i, int line_number, char **str)
 {
-	char 	*newstr;
+	char	*newstr;
 	int		len;
 	int		x;
-	
+
 	x = 1;
 	len = 0;
-	if (full[counter+1] == '\0')
+	if (full[counter + 1] == '\0')
 		x = 2;
 	newstr = (char *) malloc((i + x) * sizeof(char));
 	if (newstr == NULL)
@@ -52,7 +52,7 @@ static char	*rec(char *full, int counter, int i, int	line_number, char **str)
 	counter -= i;
 	while (i-- != 0)
 		newstr[len++] = full[counter++];
-	if (full[counter+1] == '\0')
+	if (full[counter + 1] == '\0')
 		newstr[len++] = full[counter];
 	newstr[len] = '\0';
 	return (newstr);
@@ -73,7 +73,7 @@ char	**ft_split(char const *s, char c)
 		return (array);
 	while (s[counter])
 	{
-		if (s[counter] == c || s[counter +1] == '\0')
+		if (s[counter] == c || s[counter + 1] == '\0')
 		{
 			array[line_number] = rec((char *)s, counter, i, line_number, array);
 			if (array[line_number] == NULL)

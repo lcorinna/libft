@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 17:12:36 by lcorinna          #+#    #+#             */
-/*   Updated: 2021/11/01 13:18:16 by lcorinna         ###   ########.fr       */
+/*   Updated: 2021/11/09 15:40:32 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 // #include <stdio.h>
 // #include <string.h>
 
-size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	int i;
-	char *q;
+	int		i;
+	char	*q;
 
 	q = (char *)src;
 	i = 0;

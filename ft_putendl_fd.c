@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 11:39:22 by lcorinna          #+#    #+#             */
-/*   Updated: 2021/11/06 11:46:45 by lcorinna         ###   ########.fr       */
+/*   Updated: 2021/11/09 15:35:23 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_putendl_fd(char *s, int fd)
 // int	main(void)
 // {
 // 	char str[] = "12345";
-	
+
 // 	ft_putendl_fd(str, 1);
 // 	return (0);
 // }

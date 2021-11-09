@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 13:05:36 by lcorinna          #+#    #+#             */
-/*   Updated: 2021/11/01 15:02:49 by lcorinna         ###   ########.fr       */
+/*   Updated: 2021/11/09 15:41:13 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	int		k;
 	int		j;
-	
+
 	j = 0;
 	if (*needle == 0)
 		return ((char *) haystack);

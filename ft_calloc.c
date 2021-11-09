@@ -6,31 +6,38 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 16:48:34 by lcorinna          #+#    #+#             */
-/*   Updated: 2021/10/27 16:49:13 by lcorinna         ###   ########.fr       */
+/*   Updated: 2021/11/09 15:33:38 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
 #include "libft.h"
+//#include <string.h> 
+//#include <stdio.h>
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	int		i;
-	char	*a;
+	void	*m;
 
-	i = 0;
-	a = (char *) malloc(count * size);
-	if (a == NULL)
-		return (a);
-	while (count-- > 0)
-		a[i++] = '\0';
-	return (&a[0]);
+	m = malloc(count * size);
+	if (m == NULL || count == 0)
+		return (m);
+	ft_bzero(m, count);
+	return (m);
 }
 
-// int	main(void)
+// int main(void)
 // {
-	
-// 	printf("%p\n\n", calloc(0, sizeof(char *)));
-// 	printf("%p\n", ft_calloc(0, sizeof(char *)));
+// 	int size = 8539;
+
+// 	// printf("%p\n\n", calloc(size, sizeof(int)));
+// 	// printf("%p\n", ft_calloc(size, sizeof(int)));
+
+// 	void *d1 = ft_calloc(size, sizeof(int));
+// 	void *d2 = calloc(size, sizeof(int));
+// 	if (memcmp(d1, d2, size * sizeof(int)))
+// 		printf("%s\n", "TEST_FAILED");
+// 	free(d1);
+// 	free(d2);
+// 	printf("%s\n","TEST_SUCCESS");
 // 	return (0);
 // }

@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 15:23:41 by lcorinna          #+#    #+#             */
-/*   Updated: 2021/10/31 19:22:51 by lcorinna         ###   ########.fr       */
+/*   Updated: 2021/11/09 12:53:25 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = 0;
 	count = ft_strlen(s) - start;
-	if (count > len)
-		count = len;
+	if (count > (int) len)
+		count = (int) len;
 	newstr = (char *) malloc(sizeof(char) * (count + 1));
 	if (newstr == NULL)
 		return (newstr);
