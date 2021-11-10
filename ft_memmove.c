@@ -6,12 +6,12 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 16:00:35 by lcorinna          #+#    #+#             */
-/*   Updated: 2021/11/09 16:21:01 by lcorinna         ###   ########.fr       */
+/*   Updated: 2021/11/10 11:41:29 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+// #include <string.h>
+// #include <stdio.h>
 #include "libft.h"
 
 // void	*ft_memcpy(void *dst, const void *src, size_t n)
@@ -33,7 +33,7 @@
 // 	return (w);
 // }
 
-void *ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	char	*d;
 	char	*s;

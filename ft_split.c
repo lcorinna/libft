@@ -6,14 +6,14 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 11:24:42 by lcorinna          #+#    #+#             */
-/*   Updated: 2021/11/09 15:48:02 by lcorinna         ###   ########.fr       */
+/*   Updated: 2021/11/10 19:16:33 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 //#include <stdio.h>
 
-static char	**arraymem(char const *s, char c)
+static char	**ft_arraymem(char const *s, char c)
 {
 	char	**formem;
 	int		j;
@@ -24,14 +24,18 @@ static char	**arraymem(char const *s, char c)
 	while (s[j])
 	{
 		if (s[j] == c)
+		{
+			while (s[j] == c)
+				j++;
 			i++;
+		}
 		j++;
 	}
-	formem = (char **) malloc ((i + 1) * sizeof(char *));
+	formem = (char **) malloc ((i + 2) * sizeof(char *));
 	return (formem);
 }
 
-static char	*rec(char *full, int counter, int i, int line_number, char **str)
+static char	*ft_rec(char *full, int counter, int i, int line_number, char **str)
 {
 	char	*newstr;
 	int		len;
@@ -68,19 +72,21 @@ char	**ft_split(char const *s, char c)
 	line_number = 0;
 	counter = 0;
 	i = 0;
-	array = arraymem(s, c);
+	array = ft_arraymem(s, c);
 	if (array == NULL)
 		return (array);
 	while (s[counter])
 	{
 		if (s[counter] == c || s[counter + 1] == '\0')
 		{
-			array[line_number] = rec((char *)s, counter, i, line_number, array);
+			array[line_number] = ft_rec((char *)s, counter, i, line_number, array);
 			if (array[line_number] == NULL)
 				return (NULL);
 			line_number++;
 			i = -1;
 		}
+		while (s[counter] == c)
+				counter++;
 		counter++;
 		i++;
 	}
@@ -92,7 +98,7 @@ char	**ft_split(char const *s, char c)
 // {
 // 	char	**array;
 // 	int		line_number;
-// 	char	s1[] = "123 456 789";
+// 	char	s1[] = "qwe   123 abc";
 // 	char	c = ' ';
 
 // 	line_number = 0;

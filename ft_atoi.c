@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 15:11:23 by lcorinna          #+#    #+#             */
-/*   Updated: 2021/11/09 15:33:02 by lcorinna         ###   ########.fr       */
+/*   Updated: 2021/11/10 14:07:36 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,17 +44,18 @@ int	ft_atoi(const char *str)
 		res = (number((char *) &str[++i]));
 	else
 		res = (number((char *) &str[i]));
-	if (res < -2147483648)
-		return (-1);
-	else if (res > 2147483647)
-		return (0);
 	return (res);
 }
 
 // int	main(void)
 // {
-// 	char	n[40] = "2147483650";
+// 	char	n[40] = "-2147483649";
 // 	printf("%d\n\n", atoi(n));
 // 	printf("%d\n", ft_atoi(n));
 // 	return (0);
 // }
+
+// 	if (res < -2147483648)
+// 		return (-1);
+// 	else if (res > 2147483647)
+// 		return (0);

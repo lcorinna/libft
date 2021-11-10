@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 16:39:44 by lcorinna          #+#    #+#             */
-/*   Updated: 2021/11/05 17:24:08 by lcorinna         ###   ########.fr       */
+/*   Updated: 2021/11/10 17:05:14 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,12 @@
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
+	int	i;
+
+	i = 0;
 	while (*s != '\0')
 	{
-		f(1, s);
+		f(i++, s);
 		s++;
 	}
 }

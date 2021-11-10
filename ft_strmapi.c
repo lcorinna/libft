@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 15:29:31 by lcorinna          #+#    #+#             */
-/*   Updated: 2021/11/09 15:41:01 by lcorinna         ###   ########.fr       */
+/*   Updated: 2021/11/10 15:13:07 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,16 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*str;
 	int		i;
 
-	str = (char *) malloc((ft_strlen(s) + 1) * sizeof(char));
+	if (s == NULL || f == NULL)
+		return (NULL);
+	i = ft_strlen(s);
+	str = (char *) malloc((i + 1) * sizeof(char));
+	if (str == NULL)
+		return (str);
 	i = 0;
-	while (s[i])
+	while (s[i] != 0)
 	{
-		str[i] = f(1, s[i]);
+		str[i] = f(i, s[i]);
 		i++;
 	}
 	str[i] = '\0';
@@ -47,7 +52,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 // int	main(void)
 // {
-// 	char str[] = "1112345";
+// 	char str[] = "123456";
+// 	//strcpy(str, "LoReM iPsUm");
 
 // 	printf("%s\n", ft_strmapi(str, figa));
 // 	return (0);
