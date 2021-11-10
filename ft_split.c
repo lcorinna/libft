@@ -6,12 +6,12 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 11:24:42 by lcorinna          #+#    #+#             */
-/*   Updated: 2021/11/10 19:16:33 by lcorinna         ###   ########.fr       */
+/*   Updated: 2021/11/10 20:15:41 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
+#include <stdio.h>
 
 static char	**ft_arraymem(char const *s, char c)
 {
@@ -84,9 +84,15 @@ char	**ft_split(char const *s, char c)
 				return (NULL);
 			line_number++;
 			i = -1;
-		}
-		while (s[counter] == c)
+			if (s[counter + 1] == '\0')
+			{
+				array[line_number] = NULL;
+				return (array);				
+			}
+			while (s[counter] == c)
 				counter++;
+			counter -= 1;
+		}
 		counter++;
 		i++;
 	}
@@ -98,8 +104,8 @@ char	**ft_split(char const *s, char c)
 // {
 // 	char	**array;
 // 	int		line_number;
-// 	char	s1[] = "qwe   123 abc";
-// 	char	c = ' ';
+// 	char	s1[] = "123 123 123";
+// 	char	c = '\0';
 
 // 	line_number = 0;
 // 	array = ft_split(s1, c);

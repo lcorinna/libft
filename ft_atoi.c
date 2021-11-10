@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 15:11:23 by lcorinna          #+#    #+#             */
-/*   Updated: 2021/11/10 14:07:36 by lcorinna         ###   ########.fr       */
+/*   Updated: 2021/11/10 20:18:01 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 // #include <stdio.h>
 #include "libft.h"
 
-static long long	number(char *done)
+static long long	ft_number(char *done)
 {
 	long long	res;
 	int			i;
