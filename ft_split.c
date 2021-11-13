@@ -6,113 +6,135 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 11:24:42 by lcorinna          #+#    #+#             */
-/*   Updated: 2021/11/10 20:15:41 by lcorinna         ###   ########.fr       */
+/*   Updated: 2021/11/13 15:42:14 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-static char	**ft_arraymem(char const *s, char c)
+static char	**ft_clean_memory(char **array, int i)
 {
-	char	**formem;
-	int		j;
+	while (i > -1)
+	{
+		free (array[i]);
+		array [i] = NULL;
+		i--;
+	}
+	free (array);
+	array = NULL;
+	return (NULL);
+}
+
+static char	**ft_mem_for_array(char const *s, char c)
+{
+	char	**array;
 	int		i;
+	int		m;
 
-	j = 0;
+	m = 0;
 	i = 0;
-	while (s[j])
+	while (s[i])
 	{
-		if (s[j] == c)
+		if (s[i] != c)
 		{
-			while (s[j] == c)
-				j++;
-			i++;
+			m++;
+			while (s[i] != c && s[i])
+				i++;
+			i--;
 		}
-		j++;
+		i++;
 	}
-	formem = (char **) malloc ((i + 2) * sizeof(char *));
-	return (formem);
+	array = (char **) malloc((m + 1) * sizeof(char *));
+	if (m == 0)
+		array[0] = NULL;
+	return (array);
 }
 
-static char	*ft_rec(char *full, int counter, int i, int line_number, char **str)
+static char	**ft_write_array(char **array, char const *s, char c)
 {
-	char	*newstr;
-	int		len;
-	int		x;
+	int	i;
+	int	j;
+	int	m;
 
-	x = 1;
-	len = 0;
-	if (full[counter + 1] == '\0')
-		x = 2;
-	newstr = (char *) malloc((i + x) * sizeof(char));
-	if (newstr == NULL)
+	i = 0;
+	j = 0;
+	m = 0;
+	while (s[i])
 	{
-		while (line_number != -1)
-			free (str[line_number--]);
-		free (str);
-		return (NULL);
+		if (s[i] != c)
+		{
+			while (s[i] != c && s[i])
+			{
+				i++;
+				j++;
+			}
+			array[m] = ft_substr(s, i - j, j);
+			if (array[m] == NULL)
+				return (ft_clean_memory(array, m));
+			m++;
+			i--;    "AA AA jkA"
+			j = 0;
+		}
+		i++;
 	}
-	counter -= i;
-	while (i-- != 0)
-		newstr[len++] = full[counter++];
-	if (full[counter + 1] == '\0')
-		newstr[len++] = full[counter];
-	newstr[len] = '\0';
-	return (newstr);
+	array[m] = NULL;
+	return (array);
 }
+
+// int	ft_strlen(const char *r)
+// {
+// 	int	i;
+
+// 	i = 0;
+// 	while (r[i])
+// 		i++;
+// 	return (i);
+// }
+
+// char	*ft_substr(char const *s, unsigned int start, size_t len)
+// {
+// 	char	*newstr;
+// 	int		i;
+// 	int		count;
+
+// 	i = 0;
+// 	count = ft_strlen(s) - start;
+// 	if (count > (int) len)
+// 		count = (int) len;
+// 	if (count <= 0)
+// 		count = 0;
+// 	newstr = (char *) malloc(sizeof(char) * (count + 1));
+// 	if (newstr == NULL)
+// 		return (newstr);
+// 	while (s[start] != 0 && len-- != 0 && count != 0)
+// 		newstr[i++] = s[start++];
+// 	newstr[i] = '\0';
+// 	return (newstr);
+// }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**array;
-	int		i;
-	int		counter;
-	int		line_number;
 
-	line_number = 0;
-	counter = 0;
-	i = 0;
-	array = ft_arraymem(s, c);
+	array = ft_mem_for_array(s, c);
 	if (array == NULL)
 		return (array);
-	while (s[counter])
-	{
-		if (s[counter] == c || s[counter + 1] == '\0')
-		{
-			array[line_number] = ft_rec((char *)s, counter, i, line_number, array);
-			if (array[line_number] == NULL)
-				return (NULL);
-			line_number++;
-			i = -1;
-			if (s[counter + 1] == '\0')
-			{
-				array[line_number] = NULL;
-				return (array);				
-			}
-			while (s[counter] == c)
-				counter++;
-			counter -= 1;
-		}
-		counter++;
-		i++;
-	}
-	array[line_number] = NULL;
+	array = ft_write_array(array, s, c);
 	return (array);
 }
 
 // int	main(void)
 // {
 // 	char	**array;
-// 	int		line_number;
-// 	char	s1[] = "123 123 123";
-// 	char	c = '\0';
-
-// 	line_number = 0;
-// 	array = ft_split(s1, c);
-// 	while (array[line_number] != NULL)
+// 	int		i = 0;
+// 	char str[] = "                  olol";
+// 	char c = ' ';
+// 	array = ft_split(str, c);
+// 	while (array[i])
 // 	{
-// 		printf("%s\n", array[line_number]);
-// 		line_number++;
+// 		printf("%s\n", array[i]);
+// 		i++;
 // 	}
 // 	return (0);
 // }

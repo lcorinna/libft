@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 15:11:23 by lcorinna          #+#    #+#             */
-/*   Updated: 2021/11/10 20:18:01 by lcorinna         ###   ########.fr       */
+/*   Updated: 2021/11/13 14:27:58 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ int	ft_atoi(const char *str)
 	while ((str[i] == 32) || (str[i] > 8 && str[i] < 14))
 		i++;
 	if (str[i] == 45)
-		res = (number((char *) &str[++i]) * (-1));
+		res = (ft_number((char *) &str[++i]) * (-1));
 	else if (str[i] == 43)
-		res = (number((char *) &str[++i]));
+		res = (ft_number((char *) &str[++i]));
 	else
-		res = (number((char *) &str[i]));
+		res = (ft_number((char *) &str[i]));
 	return (res);
 }
 
