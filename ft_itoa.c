@@ -6,12 +6,11 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 23:09:33 by lcorinna          #+#    #+#             */
-/*   Updated: 2021/11/13 17:05:09 by lcorinna         ###   ########.fr       */
+/*   Updated: 2021/11/13 19:18:01 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
 
 static char	*ft_zero_chek(long long a)
 {
@@ -66,11 +65,3 @@ char	*ft_itoa(int n)
 		count[--n] = '-';
 	return (count);
 }
-
-// int	main(void)
-// {
-// 	int	count;
-// 	count = 0;
-// 	printf("%s\n", ft_itoa(count));
-// 	return (0);
-// }

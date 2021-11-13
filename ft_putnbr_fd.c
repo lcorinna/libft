@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 11:46:08 by lcorinna          #+#    #+#             */
-/*   Updated: 2021/11/10 18:22:33 by lcorinna         ###   ########.fr       */
+/*   Updated: 2021/11/13 19:18:47 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,3 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	write(fd, &count, 1);
 }
-
-// int	main(void)
-// {
-// 	int	i = -2147483648;
-
-// 	ft_putnbr_fd(i, 2);
-// 	return (0);
-// }

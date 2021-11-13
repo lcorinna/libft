@@ -6,28 +6,11 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 15:29:31 by lcorinna          #+#    #+#             */
-/*   Updated: 2021/11/13 15:52:19 by lcorinna         ###   ########.fr       */
+/*   Updated: 2021/11/13 19:20:15 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// #include <stdio.h>
-
-// char	figa(unsigned int i, char c)
-// {
-// 	c = c + i;
-// 	return (c);
-// }
-
-// int	ft_strlen(const char *r)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (r[i])
-// 		i++;
-// 	return (i);
-// }
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -47,12 +30,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str[i] = '\0';
 	return (str);
 }
-
-// int	main(void)
-// {
-// 	char str[] = "123456";
-// 	//strcpy(str, "LoReM iPsUm");
-
-// 	printf("%s\n", ft_strmapi(str, figa));
-// 	return (0);
-// }

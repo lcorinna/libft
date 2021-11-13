@@ -6,7 +6,7 @@
 #    By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/25 21:27:37 by lcorinna          #+#    #+#              #
-#    Updated: 2021/11/13 17:06:08 by lcorinna         ###   ########.fr        #
+#    Updated: 2021/11/13 19:10:07 by lcorinna         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,20 +20,20 @@ ft_substr.c ft_tolower.c ft_toupper.c
 
 O_FILES = $(LIST_1:.c=.o)
 
-D_FILES = $(LIST_1:.c=.d)
-
 all: $(NAME)
 
 $(NAME): $(O_FILES)
 	ar rc $(NAME) $?
 
-%.o: %.c libft.h
-	gcc -Wall -Wextra -Werror -c $< -o $@ -MD
+%.o: %.c libft.h Makefile
+	gcc -Wall -Wextra -Werror -c $< -o $@
 
 clean:
-		rm $(O_FILES) $(D_FILES)
+		rm $(O_FILES)
 	
 fclean: clean
 		rm -rf $(NAME)
 	
 re: fclean $(NAME)
+
+.PHONY: all clean fclean re

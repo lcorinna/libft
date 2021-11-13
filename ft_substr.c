@@ -6,22 +6,11 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 15:23:41 by lcorinna          #+#    #+#             */
-/*   Updated: 2021/11/10 15:36:39 by lcorinna         ###   ########.fr       */
+/*   Updated: 2021/11/13 19:21:11 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
 #include "libft.h"
-
-// int	ft_strlen(const char *r)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (r[i])
-// 		i++;
-// 	return (i);
-//}
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -43,10 +32,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	newstr[i] = '\0';
 	return (newstr);
 }
-
-// int main(void)
-// {
-// 	char	str[] = "qwerty";
-// 	printf("%s\n", ft_substr(str, 9, 2));
-// 	return (0);
-// }

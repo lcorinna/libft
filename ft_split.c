@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 11:24:42 by lcorinna          #+#    #+#             */
-/*   Updated: 2021/11/13 15:51:40 by lcorinna         ###   ########.fr       */
+/*   Updated: 2021/11/13 19:23:20 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,37 +80,6 @@ static char	**ft_write_array(char **array, char *s, char c)
 	return (array);
 }
 
-// int	ft_strlen(const char *r)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (r[i])
-// 		i++;
-// 	return (i);
-// }
-
-// char	*ft_substr(char const *s, unsigned int start, size_t len)
-// {
-// 	char	*newstr;
-// 	int		i;
-// 	int		count;
-
-// 	i = 0;
-// 	count = ft_strlen(s) - start;
-// 	if (count > (int) len)
-// 		count = (int) len;
-// 	if (count <= 0)
-// 		count = 0;
-// 	newstr = (char *) malloc(sizeof(char) * (count + 1));
-// 	if (newstr == NULL)
-// 		return (newstr);
-// 	while (s[start] != 0 && len-- != 0 && count != 0)
-// 		newstr[i++] = s[start++];
-// 	newstr[i] = '\0';
-// 	return (newstr);
-// }
-
 char	**ft_split(char const *s, char c)
 {
 	char	*str;
@@ -123,18 +92,3 @@ char	**ft_split(char const *s, char c)
 	array = ft_write_array(array, str, c);
 	return (array);
 }
-
-// int	main(void)
-// {
-// 	char	**array;
-// 	int		i = 0;
-// 	char str[] = "                  olol";
-// 	char c = ' ';
-// 	array = ft_split(str, c);
-// 	while (array[i])
-// 	{
-// 		printf("%s\n", array[i]);
-// 		i++;
-// 	}
-// 	return (0);
-// }

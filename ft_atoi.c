@@ -6,12 +6,10 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 15:11:23 by lcorinna          #+#    #+#             */
-/*   Updated: 2021/11/13 14:27:58 by lcorinna         ###   ########.fr       */
+/*   Updated: 2021/11/13 19:17:16 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdlib.h>
-// #include <stdio.h>
 #include "libft.h"
 
 static long long	ft_number(char *done)
@@ -46,16 +44,3 @@ int	ft_atoi(const char *str)
 		res = (ft_number((char *) &str[i]));
 	return (res);
 }
-
-// int	main(void)
-// {
-// 	char	n[40] = "-2147483649";
-// 	printf("%d\n\n", atoi(n));
-// 	printf("%d\n", ft_atoi(n));
-// 	return (0);
-// }
-
-// 	if (res < -2147483648)
-// 		return (-1);
-// 	else if (res > 2147483647)
-// 		return (0);

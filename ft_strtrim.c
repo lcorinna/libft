@@ -6,28 +6,11 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 11:20:59 by lcorinna          #+#    #+#             */
-/*   Updated: 2021/11/10 17:00:50 by lcorinna         ###   ########.fr       */
+/*   Updated: 2021/11/13 19:20:45 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
-
-// char	*ft_strchr(const char *s, int c)
-// {
-// 	char	*a;
-
-// 	a = (char *) s;
-// 	while (*a)
-// 	{
-// 		if (*a == c)
-// 			return (a);
-// 		a++;
-// 	}
-// 	if (*a == c)
-// 		return (a);
-// 	return (NULL);
-// }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -57,11 +40,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	j = 1 - res_len;
 	return (res + j);
 }
-
-// int	main(void)
-// {
-// 	char str[] = "  \t \t \n   \n\n\n\t";
-//  char set[] = " \n\t";
-// 	printf("%s\n", ft_strtrim(str, set));
-// 	return (0);
-// }
