@@ -6,7 +6,7 @@
 #    By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/25 21:27:37 by lcorinna          #+#    #+#              #
-#    Updated: 2021/11/06 15:58:27 by lcorinna         ###   ########.fr        #
+#    Updated: 2021/11/13 17:06:08 by lcorinna         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,16 +18,20 @@ ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c ft_split.c ft_strchr.c ft_strdup.c
 ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c \
 ft_substr.c ft_tolower.c ft_toupper.c
 
-OSHKI = $(LIST_1:.c=.o)
+O_FILES = $(LIST_1:.c=.o)
 
-$(NAME): libft.h
-	gcc -Wall -Werror -Wextra -c $(LIST_1)
-	ar rc $(NAME) $(OSHKI)
-	
+D_FILES = $(LIST_1:.c=.d)
+
 all: $(NAME)
-	
+
+$(NAME): $(O_FILES)
+	ar rc $(NAME) $?
+
+%.o: %.c libft.h
+	gcc -Wall -Wextra -Werror -c $< -o $@ -MD
+
 clean:
-		rm $(OSHKI)
+		rm $(O_FILES) $(D_FILES)
 	
 fclean: clean
 		rm -rf $(NAME)
