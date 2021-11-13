@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 11:24:42 by lcorinna          #+#    #+#             */
-/*   Updated: 2021/11/13 15:42:14 by lcorinna         ###   ########.fr       */
+/*   Updated: 2021/11/13 15:51:40 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,32 +51,30 @@ static char	**ft_mem_for_array(char const *s, char c)
 	return (array);
 }
 
-static char	**ft_write_array(char **array, char const *s, char c)
+static char	**ft_write_array(char **array, char *s, char c)
 {
-	int	i;
 	int	j;
 	int	m;
 
-	i = 0;
 	j = 0;
 	m = 0;
-	while (s[i])
+	while (*s)
 	{
-		if (s[i] != c)
+		if (*s != c)
 		{
-			while (s[i] != c && s[i])
+			while (*s != c && *s)
 			{
-				i++;
+				s++;
 				j++;
 			}
-			array[m] = ft_substr(s, i - j, j);
+			array[m] = ft_substr(s - j, 0, j);
 			if (array[m] == NULL)
 				return (ft_clean_memory(array, m));
 			m++;
-			i--;    "AA AA jkA"
+			s--;
 			j = 0;
 		}
-		i++;
+		s++;
 	}
 	array[m] = NULL;
 	return (array);
@@ -115,12 +113,14 @@ static char	**ft_write_array(char **array, char const *s, char c)
 
 char	**ft_split(char const *s, char c)
 {
+	char	*str;
 	char	**array;
 
+	str = (char *) s;
 	array = ft_mem_for_array(s, c);
 	if (array == NULL)
 		return (array);
-	array = ft_write_array(array, s, c);
+	array = ft_write_array(array, str, c);
 	return (array);
 }
 
