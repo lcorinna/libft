@@ -6,12 +6,11 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 11:24:42 by lcorinna          #+#    #+#             */
-/*   Updated: 2021/11/13 19:23:20 by lcorinna         ###   ########.fr       */
+/*   Updated: 2021/11/14 13:14:38 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static char	**ft_clean_memory(char **array, int i)
 {

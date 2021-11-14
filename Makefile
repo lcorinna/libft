@@ -6,7 +6,7 @@
 #    By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/25 21:27:37 by lcorinna          #+#    #+#              #
-#    Updated: 2021/11/13 19:10:07 by lcorinna         ###   ########.fr        #
+#    Updated: 2021/11/14 12:57:42 by lcorinna         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ $(NAME): $(O_FILES)
 	gcc -Wall -Wextra -Werror -c $< -o $@
 
 clean:
-		rm $(O_FILES)
+		rm -f $(O_FILES)
 	
 fclean: clean
 		rm -rf $(NAME)
