@@ -6,7 +6,7 @@
 #    By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/25 21:27:37 by lcorinna          #+#    #+#              #
-#    Updated: 2021/11/14 12:57:42 by lcorinna         ###   ########.fr        #
+#    Updated: 2021/11/16 17:22:06 by lcorinna         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,21 +18,25 @@ ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c ft_split.c ft_strchr.c ft_strdup.c
 ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c \
 ft_substr.c ft_tolower.c ft_toupper.c
 
+BONUS = ft_lstnew.c ft_lstadd_front.c
+
 O_FILES = $(LIST_1:.c=.o)
+
+O_FILES_FOR_BONUS= $(BONUS:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(O_FILES)
+$(NAME): $(O_FILES) $(O_FILES_FOR_BONUS)
 	ar rc $(NAME) $?
 
 %.o: %.c libft.h Makefile
 	gcc -Wall -Wextra -Werror -c $< -o $@
 
 clean:
-		rm -f $(O_FILES)
+	rm -f $(O_FILES) $(O_FILES_FOR_BONUS)
 	
 fclean: clean
-		rm -rf $(NAME)
+	rm -rf $(NAME)
 	
 re: fclean $(NAME)
 
