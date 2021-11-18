@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 18:43:28 by lcorinna          #+#    #+#             */
-/*   Updated: 2021/11/17 20:29:29 by lcorinna         ###   ########.fr       */
+/*   Updated: 2021/11/18 19:07:54 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,15 @@ t_list	*ft_lstnew(void *content)
 
 // int	main(void)
 // {
-// 	t_list	leha = {"1234", "artem"};
+// 	t_list	artem;
+// 	t_list	leha = {"1234", &artem};
 
 // 	//leha.content = 34;
 // 	printf("%s\n", leha.content);
-// 	printf("%s\n\n", leha.next); 
+// 	printf("%p\n\n", leha.next); 
 // 	leha = *ft_lstnew("qwerty");
 // 	printf("%s\n", leha.content);
-// 	printf("%s\n", leha.next); 
+// 	printf("%p\n", leha.next); 
 // 	return (0);
 // }
 

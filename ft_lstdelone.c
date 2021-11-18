@@ -1,39 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/17 23:11:55 by lcorinna          #+#    #+#             */
-/*   Updated: 2021/11/18 19:38:28 by lcorinna         ###   ########.fr       */
+/*   Created: 2021/11/18 11:59:26 by lcorinna          #+#    #+#             */
+/*   Updated: 2021/11/18 15:51:07 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// #include <stdio.h>
 
-int	ft_lstsize(t_list *lst)
+// void	fun_del(void *tmp)
+// {
+// 	free(tmp);
+// }
+
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	int	i;
+	t_list	*new;
 
-	i = 1;
-	while ((*lst).next != NULL)
-	{
-		lst = (*lst).next;
-		i++;
-	}
-	return (i);
+	new = lst;
+	del(lst);
 }
 
 // int	main(void)
 // {
-// 	t_list	train5 = {"vagon5", NULL};
-// 	t_list	train4 = {"vagon4", &train5};
-// 	t_list	train3 = {"vagon3", &train4};
-// 	t_list	train2 = {"vagon2", &train3};
-// 	t_list	train1 = {"vagon1", &train2};
+// 	t_list	audi = {"A8", NULL};
+// 	t_list	bmw = {"Х6", &audi};
 
-// 	printf("%d\n", ft_lstsize(&train1));
+// 	ft_lstdelone(&bmw, &fun_del);
 // 	return (0);
 // }

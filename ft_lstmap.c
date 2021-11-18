@@ -1,39 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/17 23:11:55 by lcorinna          #+#    #+#             */
-/*   Updated: 2021/11/18 19:38:28 by lcorinna         ###   ########.fr       */
+/*   Created: 2021/11/18 15:50:06 by lcorinna          #+#    #+#             */
+/*   Updated: 2021/11/18 18:56:18 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// #include <stdio.h>
 
-int	ft_lstsize(t_list *lst)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	int	i;
-
-	i = 1;
-	while ((*lst).next != NULL)
-	{
-		lst = (*lst).next;
-		i++;
-	}
-	return (i);
 }
 
 // int	main(void)
 // {
-// 	t_list	train5 = {"vagon5", NULL};
-// 	t_list	train4 = {"vagon4", &train5};
-// 	t_list	train3 = {"vagon3", &train4};
-// 	t_list	train2 = {"vagon2", &train3};
-// 	t_list	train1 = {"vagon1", &train2};
+// 	t_list	audi = {"A8", NULL};
+// 	t_list	bmw = {"Х6", &audi};
 
-// 	printf("%d\n", ft_lstsize(&train1));
+// 	ft_lstdelone(&bmw, &fun_del);
 // 	return (0);
 // }
