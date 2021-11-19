@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 23:30:47 by lcorinna          #+#    #+#             */
-/*   Updated: 2021/11/18 19:43:01 by lcorinna         ###   ########.fr       */
+/*   Updated: 2021/11/19 13:21:30 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
+	if (lst == NULL)
+		return (lst);
 	while ((*lst).next != NULL)
 		lst = lst->next;
 	return (lst);

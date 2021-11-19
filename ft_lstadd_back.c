@@ -6,7 +6,7 @@
 /*   By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 23:50:50 by lcorinna          #+#    #+#             */
-/*   Updated: 2021/11/18 20:30:55 by lcorinna         ###   ########.fr       */
+/*   Updated: 2021/11/19 13:45:05 by lcorinna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,13 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	*lst = ft_lstlast(*lst);
-	(**lst).next = new;
+	if (*lst == NULL)
+		*lst = new;
+	else
+	{
+		*lst = ft_lstlast(*lst);
+		(**lst).next = new;
+	}
 }
 
 // int	main(void)
@@ -37,7 +42,8 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 // 	t_list	train1 = {"vagon1", &train2};
 // 	t_list	*train;
 
-// 	train = &train1;
+// 	//train = &train1;
+// 	train = NULL;
 // 	new = &car;
 // 	printf("%p\n", train5.next);
 // 	ft_lstadd_back(&train, new);
