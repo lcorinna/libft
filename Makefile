@@ -6,7 +6,7 @@
 #    By: lcorinna <lcorinna@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/25 21:27:37 by lcorinna          #+#    #+#              #
-#    Updated: 2021/11/19 14:29:13 by lcorinna         ###   ########.fr        #
+#    Updated: 2021/11/21 15:12:57 by lcorinna         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,19 +25,18 @@ O_FILES = $(LIST_1:.c=.o)
 
 O_FILES_FOR_BONUS = $(BONUS:.c=.o)
 
+override ALL_O_FILES ?= $(O_FILES) 
+
 all: $(NAME)
 
-$(NAME): $(O_FILES)
-	ar rc $(NAME) $?
+$(NAME): $(ALL_O_FILES)
+	ar rcs $(NAME) $?
 
 %.o: %.c libft.h Makefile
 	gcc -Wall -Wextra -Werror -c $< -o $@
 
-bonus: $(O_FILES_FOR_BONUS) libft.h Makefile
-	ar rc $(NAME) $?
-		
-# %.o: %.c libft.h Makefile
-# 	gcc -Wall -Wextra -Werror -c $< -o $@
+bonus:
+	make ALL_O_FILES="$(O_FILES_FOR_BONUS)" all
 
 clean:
 	rm -f $(O_FILES) $(O_FILES_FOR_BONUS)
